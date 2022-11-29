@@ -4,20 +4,41 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Scanner;
 
 public class list {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		String s = "hello    i  am  pradeep";
-		StringBuffer bf = new StringBuffer(s);
-		String[] a = s.split("[ ]+");
-		for(String q : a) {
-			System.out.println(q);
+	public static String FirstFactorial(String st) {
+	    int xcount = 0; 
+		int ocount = 0;
+		for(int i = 0; i <= st.length()-1; i++)
+	     {
+	       if(st.charAt(i)=='x')
+	       {
+	    	  xcount++; 
+	       }
+	       else if(st.charAt(i)=='o') {
+	    	   ocount++;
+	       }
+	       else
+	       {
+	    	   return "emtystring";
+	       }
+	     }
+		if(xcount == ocount)
+		{
+			return "true";
 		}
-		System.out.println(bf.reverse());
-		
-     
-	} 
+		else
+		{
+			return "false";
+		}
+	  }
 
+	public static void main(String[] args) {
+
+		Scanner s = new Scanner(System.in);
+		list m = new list();
+		System.out.print(m.FirstFactorial(s.nextLine()));
+	}
 }
